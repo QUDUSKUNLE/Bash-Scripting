@@ -1,0 +1,16 @@
+Sweet Tooth
+Bangkok Wok
+Mandalay
+Afghani Cuisine
+Isle of Java
+Big Apple Deli
+Sushi and Sashimi
+Tio Pepe's Peppers
+
+1. Add execution mode
+  => chmod +x filename
+
+2. Arithmetic operations
+  => It uses `expr` or `awk`
+
+3.  
