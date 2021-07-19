@@ -1,1 +1,1 @@
-export const ENV='./src/clients/qudus/config/.env.example';
+export const ENV='./src/clients/muhsinah/config/.env.example';

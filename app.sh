@@ -62,7 +62,7 @@ fi
 # Reading file properties
 file="/Users/andeladeveloper/D3/shell/app.sh"
 
-if [ -r $file -a -w $file -a -x $file ]
+if [ -f $file -a -r $file -a -w $file -a -x $file ]
 then
   echo "File has read, write and executable accesses"
 else
