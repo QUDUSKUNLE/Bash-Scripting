@@ -28,4 +28,4 @@ else
   echo "A is not equal to B"
 fi
 
-echo $? # exot code
+echo $? # exit code
