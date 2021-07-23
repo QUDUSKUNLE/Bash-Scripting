@@ -9,6 +9,8 @@ unset CLIENT_DIR;
 
 DIR="config ingest encode parser transfer database notifier";
 
+
+
 if [ $CLIENT_NAME ]
 then
   CLIENT_DIR="./src/clients/$NAME";
