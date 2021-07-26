@@ -1,0 +1,17 @@
+Ideally, outputs are always displayed in the standard output, which by default is the terminal.
+
+This can be redirected to the a file instead
+
+To do that, we use the `>` operator to write a specified file.
+
+While `>>` is used to append a new line to a file, `>` is used to overwrite the file.
+
+
+Also, we use `<` to set input redirections
+
+Here document is used to redirect input into an interactive shell script or program.
+
+It follows the following syntax:
+`command << delimiter
+  document
+delimiter`

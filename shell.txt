@@ -1,0 +1,2 @@
+Unix means Uniplexed Information & Computing System or Service.
+A Unix filesystem is a collection offiles and directories that has the following properties. 
