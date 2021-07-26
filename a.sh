@@ -27,4 +27,5 @@ echo "First Index: ${NAME[0]}"
 echo "Second Index: ${NAME[1]}"
 echo "${NAME[*]}"
 echo "${NAME[@]}"
+echo $(whoami)
 echo $?
