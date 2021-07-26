@@ -21,3 +21,15 @@ Okay "John" "Doe";
 ret=$?
 
 echo "Return value is $ret.";
+
+# Calling one function from another
+number_one () {
+  echo "This is the first function speaking...";
+  number_two;
+}
+
+number_two () {
+  echo "This is now the second function speaking...";
+}
+
+number_one;
