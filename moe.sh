@@ -11,19 +11,15 @@ DIR="config ingest encode parser transfer database notifier";
 
 
 
-if [ $CLIENT_NAME ]
-then
+if [ $CLIENT_NAME ]; then
   CLIENT_DIR="./src/clients/$NAME";
   echo "Setting up $CLIENT_DIR client's in moe...";
   mkdir -p $CLIENT_DIR;
-  if [ -d "$CLIENT_DIR" ];
-  then
+  if [ -d "$CLIENT_DIR" ]; then
     echo "Client directory $NAME created successfully.";
-    for dir in $DIR;
-    do
+    for dir in $DIR; do
       mkdir -p "$CLIENT_DIR/$dir";
-      if [ $dir != "config" ] && [ -d "$CLIENT_DIR/$dir" ];
-      then
+      if [ $dir != "config" ] && [ -d "$CLIENT_DIR/$dir" ]; then
         touch "$CLIENT_DIR/$dir/index.ts" &&
         echo "Setting up $CLIENT_DIR/$dir in $CLIENT_DIR...";
       else
