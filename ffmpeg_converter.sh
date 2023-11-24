@@ -4,28 +4,51 @@ echo "Today's date is " $(date)
 
 echo "\nEnter the path directory"
 
-read -r the_path
+read -r thePath
 
-echo "\nThe path has the following files and folders: "
+THE_PATH=$(tr '[:upper:]' '[:lower:]' <<< "${thePath}")
 
-THE_PATH=$(tr '[:upper:]' '[:lower:]' <<< "${the_path}")
 patterns="*.mp4"
 
 if [[ -d "${THE_PATH}" ]]; then
-  NEW_PATH_DIR="${THE_PATH}"/Audio;
-  echo "Setting the mp3 files to folder...";
+  echo "\nEnter audio directory name"
+
+  read -r audioPath
+
+  AUDIO_PATH=$(tr '[:upper:]' '[:lower:]' <<< "${audioPath}")
+
+  NEW_PATH_DIR="${THE_PATH}"/"${AUDIO_PATH}";
+
+  echo "\nSetting the mp3 files to folder...";
+
   mkdir -p "${NEW_PATH_DIR}";
+
   if [[ -d "${NEW_PATH_DIR}" ]]; then
-    echo "New directory ${NEW_PATH_DIR} created successfully.\n";
+    echo "\nNew directory ${NEW_PATH_DIR} created successfully.";
+
     echo "\nEnter Output format..."
-    read -r Output_format
+
+    read -r outputFormat
+
     for file in "${THE_PATH}"/$patterns; do
       if [[ -f "${file}" ]]; then
+
         basePath=$(tr -d '[:space:]' <<< "${file##*/}")
-        ffmpeg -i "${file}" "${NEW_PATH_DIR}"/${basePath}.${Output_format}
-        rm -f $(file)
+
+        var="${file}"
+
+        echo "\nProcessing file ${var} ....."
+
+        ffmpeg -i "${file}" "${NEW_PATH_DIR}"/${basePath}.${outputFormat}
+
+        echo "\nFile ${file} converted to ${outputFormat} successfully."
+
+        rm -f "${var}"
+
+        echo "\nFile ${file} removed from the system.\n"
+
       else
-        echo "No file's found in the directory ${THE_PATH}.";
+        echo "\nNo file's found in the directory ${THE_PATH}.";
         exit 213;
       fi;
     done;
